@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 像朋友一样的游戏站点</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(145deg, #fde4cf 0%, #fad4c0 45%, #f7c9b0 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.2rem;
+      line-height: 1.7;
+      color: #3d2c25;
+    }
+
+    .page-card {
+      max-width: 820px;
+      width: 100%;
+      background: rgba(255, 250, 245, 0.88);
+      backdrop-filter: blur(4px);
+      border-radius: 40px;
+      padding: 2.4rem 2.8rem;
+      box-shadow: 0 18px 38px -12px rgba(160, 100, 70, 0.30),
+                  0 4px 12px rgba(255, 235, 220, 0.5);
+      transition: all 0.2s ease;
+      border: 1px solid rgba(255, 240, 230, 0.6);
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 1rem 0.8rem; }
+      .page-card {
+        padding: 1.8rem 1.4rem;
+        border-radius: 32px;
+      }
+    }
+
+    /* 首页横幅 — 杂志引语 */
+    .hero-tag {
+      border-left: 5px solid #d9906a;
+      padding-left: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .hero-tag h1 {
+      font-size: 2.1rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #4f3326;
+      line-height: 1.2;
+      margin-bottom: 0.6rem;
+    }
+    .hero-tag .subhead {
+      font-size: 1.1rem;
+      color: #7b5b4a;
+      font-weight: 370;
+      background: #f5e4d9;
+      display: inline-block;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      letter-spacing: 0.02em;
+    }
+
+    .site-intro {
+      background: #fffbf8;
+      border-radius: 28px;
+      padding: 1.8rem 1.8rem 1.6rem;
+      margin: 1.6rem 0 1.2rem;
+      box-shadow: inset 0 1px 3px rgba(255, 215, 190, 0.5);
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #b58062;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      border-bottom: 2px dotted #eccfc0;
+      padding-bottom: 0.2rem;
+    }
+
+    p {
+      margin: 1rem 0;
+    }
+
+    .stat-note {
+      background: #f7ede6;
+      padding: 1rem 1.4rem;
+      border-radius: 30px;
+      margin: 1.6rem 0 1rem;
+      font-size: 0.97rem;
+      color: #4a342b;
+    }
+
+    .faq-mini {
+      background: #fcf5f0;
+      border-radius: 24px;
+      padding: 1.4rem 1.8rem;
+      margin: 2rem 0 1.2rem;
+    }
+
+    .faq-mini div {
+      margin: 0.8rem 0;
+    }
+    .faq-q {
+      font-weight: 520;
+      display: inline-block;
+      color: #6b4b3a;
+    }
+    .faq-a {
+      margin-left: 0.3rem;
+      color: #4a342b;
+    }
+
+    .bottom-hint {
+      margin-top: 2.2rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid #e6d3c7;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .a-link-soft {
+      background: #e9cfbe;
+      padding: 0.2rem 0.9rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 500;
+      color: #3a281f;
+      transition: 0.2s;
+      border: 1px solid transparent;
+      display: inline-block;
+    }
+
+    .a-link-soft:hover {
+      background: #dbb6a0;
+      border-color: #b58268;
+      color: #1f140f;
+      box-shadow: 0 4px 8px rgba(150, 90, 60, 0.1);
+      transform: scale(1.02);
+    }
+
+    .visit-note {
+      font-size: 0.95rem;
+      background: rgba(240, 220, 208, 0.3);
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+    }
+
+    a {
+      color: #6d4a36;
+      text-decoration: none;
+      font-weight: 450;
+    }
+
+    .inline-link {
+      text-decoration: underline wavy #cca48c 1.2px;
+      text-underline-offset: 3px;
+      transition: 0.15s;
+    }
+    .inline-link:hover {
+      background: #e2cbbc;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+
+    .credit-foot {
+      margin-top: 1.4rem;
+      font-size: 0.85rem;
+      color: #7a6053;
+      text-align: center;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-card">
+
+    <!-- 杂志风格横幅 -->
+    <div class="hero-tag">
+      <h1>一本关于<br>“游戏与日常”的小站</h1>
+      <div class="subhead">· 安静 · 可信 · 爱游戏</div>
+    </div>
+
+    <!-- 背景说明：站点介绍与可信角度 -->
+    <div class="site-intro">
+      <span class="section-label">✦ 关于这里</span>
+      <p><strong>web-official-i-game.com.cn</strong> 是一个以“游戏内容分享和记录”为初衷的个人兴趣站点。它不追逐热点，不夸大其词，更接近一位喜欢玩游戏的朋友，用温和的语气聊聊值得花时间的作品、机制和体验。站点从建立之初就坚持透明、非商业的立场，所有推荐和说明都基于使用后的真实感受。在这里，你可以把它当作一个可以信赖的参考，而不是广告牌。</p>
+    </div>
+
+    <!-- 三段自然介绍：特点+场景+FAQ摘要 -->
+    <p><span class="section-label">📌 特点 · 安静而具体</span><br>
+    没有弹窗、没有浮夸的排行榜。每一篇介绍都尽量聚焦在游戏本身“好玩在哪里”，以及适合什么样的玩家。偶尔会整理一些实用的小技巧和背景考据——这些内容也许冷门，但足够真诚。站点整体节奏很慢，像一本只会在周末更新的杂志。</p>
+
+    <p><span class="section-label">🎮 场景 · 可以这样用它</span><br>
+    比如你刚通关一款独立游戏，想看看别人怎么理解它的结尾；或者想找一款不费神、又能沉浸其中的短小作品；又或者你只是怀念某个老游戏，想确认它的名字或细节。这个站点的内容往往能提供一点线索、一个视角，让你觉得“啊，原来不止我一个人这么觉得”。如果你也喜欢这种轻盈的探索感，那么 <a href="https://web-official-i-game.com.cn" class="inline-link">爱游戏</a> 这片小角落或许会让你自在。</p>
+
+    <div class="faq-mini">
+      <span class="section-label">❓ 常见小疑惑</span>
+      <div><span class="faq-q">Q：站点内容会频繁更新吗？</span> <span class="faq-a">不会。更新随兴趣和空闲时间，有时一周两三次，有时隔得久一些。但每一条都认真打磨过。</span></div>
+      <div><span class="faq-q">Q：是否有付费推广或合作？</span> <span class="faq-a">没有。这里的所有游戏均为站长自购或免费公开作品，不存在任何商业植入。</span></div>
+      <div><span class="faq-q">Q：文章可以转载吗？</span> <span class="faq-a">标注来源和作者即可，很欢迎以非商业的方式分享。不过更建议直接访问原站阅读。</span></div>
+    </div>
+
+    <!-- 额外一段自然介绍，带出信任感 -->
+    <p><span class="section-label">🔍 内容可信的底气</span><br>
+    每一篇记录都留有版本日期，如果游戏有重大更新导致观点变化，也会主动追加批注。站内不设评论区，但提供了一个非常低调的反馈邮箱（在 About 页面）。站长会定期查看并修正错误——毕竟，真诚比完美更重要。这也是为什么许多人愿意把 <a href="https://web-official-i-game.com.cn" class="inline-link">爱游戏</a> 当作一个安静的参考坐标。</p>
+
+    <!-- 页尾访问提示 -->
+    <div class="bottom-hint">
+      <span class="visit-note">💬 随时来坐坐 · 站点长期开放</span>
+      <span>
+        <a href="https://web-official-i-game.com.cn" class="a-link-soft">爱游戏</a>
+      </span>
+    </div>
+
+    <div class="credit-foot">
+      ⚬ 无广告 · 无跟踪 · 只有游戏和感受 ⚬
+    </div>
+  </div>
+</body>
+</html>
