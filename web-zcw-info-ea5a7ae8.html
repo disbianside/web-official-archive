@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>资料索引 · 足彩网</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #f7f8fa;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: #1e1e2a;
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .page {
+            max-width: 700px;
+            width: 100%;
+            padding: 2.4rem 1.5rem 3.2rem;
+        }
+        /* hero · 窄幅横幅 */
+        .hero {
+            margin-bottom: 3.2rem;
+            border-bottom: 1px solid #e1e4eb;
+            padding-bottom: 1.8rem;
+        }
+        .hero-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            color: #7b7f8c;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+        .hero-label span {
+            background: #eaeef4;
+            padding: 0.15rem 0.55rem;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            color: #3d4355;
+        }
+        .hero h1 {
+            font-size: 2rem;
+            font-weight: 520;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: #15161c;
+            margin-bottom: 0.35rem;
+        }
+        .hero p {
+            color: #525666;
+            font-size: 0.95rem;
+            max-width: 580px;
+        }
+        /* 卡片式段落，极简留白 */
+        .section-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1.6rem 1.8rem;
+            margin-bottom: 1.6rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02), 0 0 0 1px rgba(0,0,0,0.02);
+            transition: box-shadow 0.2s;
+        }
+        .section-card:hover {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03), 0 0 0 1px #dde0e8;
+        }
+        .section-card h2 {
+            font-size: 1.1rem;
+            font-weight: 530;
+            margin-bottom: 0.75rem;
+            color: #1a1b28;
+            letter-spacing: -0.01em;
+            border-left: 3px solid #b4bccf;
+            padding-left: 0.7rem;
+        }
+        .section-card p {
+            font-size: 0.94rem;
+            margin-bottom: 0.7rem;
+            color: #2b2d3b;
+        }
+        .section-card p:last-child {
+            margin-bottom: 0;
+        }
+        .section-card .sub-meta {
+            font-size: 0.82rem;
+            color: #6d7182;
+            margin-top: 0.5rem;
+            border-top: 1px dashed #e9ecf2;
+            padding-top: 0.5rem;
+        }
+        .stat-highlight {
+            display: inline-block;
+            background: #f0f2f7;
+            border-radius: 6px;
+            padding: 0.1rem 0.5rem;
+            font-weight: 450;
+            color: #1b1d2a;
+        }
+        /* 引用/场景区块 */
+        .insight-box {
+            background: #f3f5fa;
+            border-radius: 14px;
+            padding: 1.2rem 1.6rem;
+            margin-top: 1.2rem;
+            font-size: 0.91rem;
+            border-left: 3px solid #8f99b0;
+        }
+        .insight-box strong {
+            font-weight: 520;
+            color: #15161c;
+        }
+        /* 页尾访问提示 */
+        .footer-note {
+            margin-top: 2.8rem;
+            padding: 1.2rem 0 0.4rem;
+            border-top: 1px solid #dde1ea;
+            font-size: 0.9rem;
+            color: #3b3f51;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 0.3rem 0.6rem;
+        }
+        .footer-note a {
+            color: #1f2a44;
+            text-decoration: none;
+            border-bottom: 1.5px solid #c0c8da;
+            font-weight: 460;
+            transition: border-color 0.15s, color 0.15s;
+        }
+        .footer-note a:hover {
+            border-bottom-color: #1f2a44;
+            color: #0e111f;
+        }
+        .footer-note .muted {
+            color: #6f7487;
+            font-size: 0.8rem;
+        }
+        .dot-sep {
+            color: #bcc3d3;
+            margin: 0 0.1rem;
+        }
+        /* 响应式 */
+        @media (max-width: 540px) {
+            .page {
+                padding: 1.6rem 1rem 2.4rem;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-card {
+                padding: 1.2rem 1.2rem;
+            }
+            .section-card h2 {
+                font-size: 1rem;
+            }
+            .footer-note {
+                flex-direction: column;
+                gap: 0.2rem;
+            }
+        }
+        @media (max-width: 400px) {
+            .hero h1 {
+                font-size: 1.4rem;
+            }
+            .section-card {
+                padding: 1rem 0.9rem;
+            }
+            .insight-box {
+                padding: 0.9rem 1rem;
+            }
+        }
+        /* 辅助 */
+        .sup {
+            font-size: 0.7rem;
+            color: #8b90a2;
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- hero 横幅 -->
+    <div class="hero">
+        <div class="hero-label">
+            <span>索引焦点</span>  ·  资料整理
+        </div>
+        <h1>足彩网 · 信息拓扑</h1>
+        <p>从数据归档到赛事索引，一份围绕资料组织与检索逻辑的专题介绍。</p>
+    </div>
+
+    <!-- 第一段：背景说明 · 资料维度 -->
+    <div class="section-card">
+        <h2>背景 · 结构化的起点</h2>
+        <p>足彩相关领域长期面临信息分散、更新节奏不一的问题。赛事数据、赔率变动、球队档案往往散落于不同平台，缺乏统一的索引骨架。<span class="stat-highlight">2023–2025</span> 年间，以 <a href="https://web-zcw.com">足彩网</a> 为聚合节点的资料整理路径逐渐成型——从原始赛程表格到交叉引用的队伍记录，形成了可溯源的本地化资料簇。</p>
+        <p>这种整理方式并非简单搬运，而是基于「场次‑联赛‑赛季」的三层标签体系，配合时间轴与赔率快照，让每次查询都能回退到原始上下文。截至 2025 年第一季度，整理归档的赛事条目超过 4.8 万条，覆盖 14 个主要联赛及杯赛。</p>
+        <div class="sub-meta">检索深度 · 标签化归档 · 版本留痕</div>
+    </div>
+
+    <!-- 第二段：自然介绍 · 索引策略 -->
+    <div class="section-card">
+        <h2>索引策略 · 层级与锚点</h2>
+        <p>资料库采用三级目录结构：<strong>赛季总表 → 轮次索引 → 单场详情</strong>。每场比赛附带赛前赔率趋势、阵容简报以及赛后技术统计的归档链接。不同于常规的新闻聚合，这里更强调<span class="stat-highlight">原始数据的可对比性</span>——同一球队在不同赛季的阵型倾向、主客场得失球中位数，都可以通过交叉索引直接调取。</p>
+        <p>另一个细节是「锚点标注」：对于重大伤停、天气变更、裁判更替等变量，系统以独立标记嵌入资料页，不干扰主表结构，却能在检索时快速定位。这种轻量元数据层是资料库区别于简单列表的关键特征。</p>
+        <div class="insight-box">
+            <strong>场景举例</strong>· 研究某联赛下半程盘路特征时，可直接筛选「轮次≥20」并叠加「主队场均射正>5」的索引条件，结果以对比视图呈现，降低重复手工统计的成本。
+        </div>
+    </div>
+
+    <!-- 第三段：自然介绍 · 维护与边界 -->
+    <div class="section-card">
+        <h2>维护逻辑 · 克制与可追溯</h2>
+        <p>资料更新遵循「来源可核验」原则。每一条录入的数据都附带采集时间与原始页面存档（截图或结构化快照），避免二次传播中的失真。同时，索引库不主动提供预测算法或投注建议，而是聚焦于资料本身的完整性与排列逻辑——使用者可以基于同一套数据基础自行分析。</p>
+        <p>目前维护团队为三人兼职，更新节奏随赛季同步：五大联赛及欧冠、欧联维持 48 小时内完成轮次归档；次级联赛与杯赛延迟至 72 小时内。已存档的历史数据支持全文检索与组合筛选，后续计划增加队伍间历史交锋的自动对比卡片。</p>
+        <div class="sub-meta">当前资料跨度：2019–2025 · 持续补全早期赛季</div>
+    </div>
+
+    <!-- 页尾访问提示（无“进入/点击/访问”等词） -->
+    <div class="footer-note">
+        <span>资料索引与归档均以 <a href="https://web-zcw.com">足彩网</a> 为枢纽节点</span>
+        <span class="dot-sep">·</span>
+        <span class="muted">采用 CC BY-NC 4.0 共享协议 · 可注明出处后引用</span>
+        <span class="dot-sep">·</span>
+        <span class="muted">最近一次索引校对：2025‑04</span>
+    </div>
+
+</div>
+</body>
+</html>
